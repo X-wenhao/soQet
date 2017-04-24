@@ -18,6 +18,8 @@ Prototype of primitive chat-room, concerning socket programming.
 - [ ] **登陆（注册）页面**<br>
 	- 表单提交
 - [ ] **在联系人列表中，在线状态的表示**
+- [ ] **Toast Msg - 弹出式消息提醒**<br>
+	- 可以参考MaterializeCSS和Toastr
 
 
 ### Chat Module
