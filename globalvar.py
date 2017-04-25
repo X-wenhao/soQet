@@ -41,7 +41,12 @@ pass
 
 #### Security ####
 
+# app.secret_key
+# change this very often
+SECRET_KEY = "some thing secret"
+
 # 用户密码hash前简单加密用
+# DO NOT CHANGE THIS!!!!!!!!
 SALT = "I've got Linear Algebra test in Week 13!!!"
 
 # 邀请码（暂时不需要）

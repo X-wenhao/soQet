@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>瓜子小板凳聊天室 - Login</title>
+  </head>
+  <body>
+
+
+    <h3>登录页面</h3>
+    <br><br>
+    <form class="" action="" method="post">
+      ID: <input type="text" name="id" value=""><br>
+      PASSWD: <input type="text" name="passwd" value=""><br>
+      <button type="submit" id="submit-button">GO!</button>
+    </form>
+
+
+    {% for each in get_flashed_messages() %}
+    {{ each }}
+    {% endfor %}
+
+
+
+
+  </body>
+</html>

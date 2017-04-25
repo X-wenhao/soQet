@@ -15,6 +15,7 @@ __author__ = 'smdsbz'
 
 from functools import wraps
 import sqlite3, hashlib
+from flask import flash
 
 
 
@@ -51,7 +52,7 @@ def signinUser(id, passwd):
             if cur.fetchone():  # i.e. id used already
                 # flash("用户名已经存在！", category='warning')
                 return False
-                
+
             # everything OK
             else:
                 treated_passwd = hashlib.sha256((SALT+passwd+id).encode('utf-8')).hexdigest()
@@ -63,3 +64,30 @@ def signinUser(id, passwd):
 
     # General Exit
     return False
+
+
+
+
+def loginUser(id, passwd):
+    '''
+    用户登录信息验证
+    '''
+    if '' in (id, passwd):
+        return False
+    else:
+        with sqlite3.connect(USER_DB) as db:
+            # get passwd from db
+            SQL = "SELECT PASSWD FROM USER WHERE ID = '{}'".format(id)
+            cur = db.execute(SQL)
+            lock = cur.fetchone()   # ('passwd_encrypted', )
+            if lock is None:
+                flash("用户名或密码错误！", category='warning')
+                return False
+            # make passwd mask
+            treated_passwd = hashlib.sha256((SALT+passwd+id).encode('utf-8')).hexdigest()
+            if treated_passwd == lock[0]:
+                return True
+            else:
+                flash("用户名或密码错误！", category='warning')
+                return False
+        return False
