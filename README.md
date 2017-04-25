@@ -16,14 +16,14 @@ Prototype of primitive chat-room, concerning socket programming.
 
 #### Front-End
 - [ ] **登陆（注册）页面**<br>
-	- 表单提交
-- [ ] **在联系人列表中，在线状态的表示**
+	- 表单提交（**非空检查**）
 - [ ] **Toast Msg - 弹出式消息提醒**<br>
 	- 可以参考[MaterializeCSS](http://materializecss.com/dialogs.html)和[Toastr](http://codeseven.github.io/toastr/)
 
 
 ### Chat Module
 #### Back-End
+- [ ] **在联系人列表中，在线状态的表示**
 - [ ] **消息存储**
 	- [ ] 离线消息
 	- [ ] 历史记录最大条数控制
@@ -33,7 +33,7 @@ Prototype of primitive chat-room, concerning socket programming.
 ---
 
 ## Project Structure
-### Directory Structure
+### Directory Structure Overview
 ```
 soQet/
 |
@@ -46,12 +46,12 @@ soQet/
 |   |-- ???
 |
 |-- database/           // user_info, chat_msg & other cache
+|   |-- chat_rooms/
+|   |-- P2P_chats/
 |   |-- user.db
-|   |   |-- ID      TEXT    PRIMARY KEY     NOT NULL
-|   |   |-- PASSWD  TEXT                    NOT NULL    // HASHed
-|   |-- chat_msg.db
-|       |-- TIME    INT                     NOT NULL
-|       |-- MSG     TEXT
+|       |-- ID      TEXT    PRIMARY KEY     NOT NULL
+|       |-- PASSWD  TEXT                    NOT NULL    // HASHed
+|       |-- TITLES  TEXT
 |
 |-- static/
 |   |-- img/
@@ -102,7 +102,7 @@ class ClassName():
     这个类是干啥的
     '''
     # 只需要写封装之后的内容
-    
+
     ' ARGS '
     ...
 
