@@ -1,16 +1,18 @@
 from datetime import datetime
 import socket
 import json
+import time
 
 
 
 def collectString(sock):
     buffer = []
     while True:
-        # TODO: 注释中用data=sock.recv(1024)的方法会进入死循环
+        # TODO: 注释中采用阻塞法，接收端无法判断接收是否结束，会卡住
         # TODO: 因此目前聊天室里一句话不能说太长了
         buffer = [sock.recv(1024), ]
         break
+        # sock.setblocking(0)
         # data = sock.recv(1024)
         # if data:
         #     buffer.append(data)

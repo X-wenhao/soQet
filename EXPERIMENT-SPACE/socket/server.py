@@ -12,12 +12,14 @@ def chatting(sock, addr):
     print("Accepted client: %s:%s" % addr)
     while True:
         data = collectAndParse(sock)
-        print(data)
+        # print(data)
         if data['content'] == '.exit':
             break
         else:
-            sock.send(("{}: {}".format(data['name'],
-                                       data['content'])).encode('utf-8'))
+            sock.send(
+                ("{}: {}".format(data['name'],
+                                 data['content'])).encode('utf-8')
+                )
     sock.close()
     print("session closed")
 
@@ -34,7 +36,7 @@ port = 2333
 server.bind((host, port))
 
 
-server.listen(3)
+server.listen(5)
 
 
 while True:
@@ -45,3 +47,6 @@ while True:
 
     client_thread.join()
     break
+
+
+server.close()
