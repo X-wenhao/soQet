@@ -17,7 +17,7 @@ client.connect((host, port))
 
 
 while True:
-    push_msg = Message(content=str(input('> ')))
+    push_msg = Message(name='????', content=str(input('> ')))
     if push_msg['content'] == '.exit':
         break
     client.send(push_msg.encode('utf-8'))           # 直接传送序列化后的json

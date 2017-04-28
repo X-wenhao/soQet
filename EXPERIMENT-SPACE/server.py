@@ -16,7 +16,8 @@ def chatting(sock, addr):
         if data['content'] == '.exit':
             break
         else:
-            sock.send(("client: %s" % data['content']).encode('utf-8'))
+            sock.send(("{}: {}".format(data['name'],
+                                       data['content'])).encode('utf-8'))
     sock.close()
     print("session closed")
 

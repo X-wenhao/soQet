@@ -43,19 +43,21 @@ class Message(dict):
         ps 支持json.dumps()方法，将通过json在client和server之间传送数据
     '''
     def __init__(self,
+                 name='',
                  mime='text',
                  content='',
                  time_stamp=datetime.now().timestamp()):
         dict.__init__(self,
+                      name=name,
                       mime=mime,
                       content=content,
                       time_stamp=time_stamp)
 
     def __str__(self):
-        rst = dict['mime']
-        rst += ' @ ' + str(dict['time_stamp'])
-        rst += ': ' + dict['content']
-        return rst
+        return (
+            self['mime'] + ' @ ' + str(self['time_stamp']) + ' : ' +
+            self['name'] + ' : ' + self['content']
+        )
 
 
     def encode(self, codec):
