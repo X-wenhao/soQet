@@ -88,6 +88,7 @@ soQet/
 ```json
 chat_msg = {
     "name": "smdsbz",
+    "mime": "text",         // 标志content里面的数据类型，除了text还可以是pic（图片）等
     "content": "大家都动起来啊\\托腮",
     "time_stamp": 123456789
 }
