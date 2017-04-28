@@ -7,12 +7,12 @@ Prototype of primitive chat-room, concerning socket programming.
 
 ### Login Module
 #### Back-End
-- [ ] **用户登陆<br>**
-	- [ ] *注册？？*
-- [ ] **账号密码在数据库中的存储**
+- [x] **用户登陆<br>**
+	- [x] *注册？？*
+- [x] **账号密码在数据库中的存储**
 - [ ] **用户在线状态实现方法：**<br>
 	- [ ] 对其他用户（是否可以开启小窗口？离线未接收的消息）
-	- [ ] 对服务器（安全考虑，禁止未注册人员登陆）
+	- [x] 对服务器（安全考虑，禁止未注册人员登陆）
 
 #### Front-End
 - [ ] **登陆（注册）页面**<br>
@@ -26,13 +26,13 @@ Prototype of primitive chat-room, concerning socket programming.
 - [ ] **在联系人列表中，在线状态的表示**
 - [ ] **消息存储**
 	- [ ] 离线消息
-	- [ ] 历史记录最大条数控制
+	- [ ] **历史记录最大条数控制**
 - [ ] **前后台对接**
     - 说到AJAX，我希望你们都能去看一下[上一个项目里面的搜索是如何以动态的方式展示的](https://github.com/smdsbz/NewsHorizon/blob/master/static/js/function.js#L20)，要不然我感觉可能做不完...
 
 ---
 
-## Project Structure
+<!-- ## Project Structure
 ### Directory Structure Overview
 ```
 soQet/
@@ -68,18 +68,36 @@ soQet/
 |-- globalvar.py
     |-- DATABASE    // database node
     |-- OTHER_GLOBAL_VARS
-```
+``` -->
 
-### Task Apportion
+## Task Apportion
 *to be filled*
 *请在此处填写任务分配，将用作开发记录*
 
 
+## API & Regulation
 ### API
-（选择好自己的任务后，请 **花时间** 完善API信息）  
-（可以txt写好发给我，或者有能力直接注释出PEP8文档）  
-规定格式：  
-（函数名统一camelCase，尽量封装完善）
+- `@login_verification`：  
+    在`app.route()`之后调用，防止未授权的行为  
+
+
+
+### Regulations
+
+#### 聊天内容
+```json
+chat_msg = {
+    "name": "smdsbz",
+    "content": "大家都动起来啊\\托腮",
+    "time_stamp": 123456789
+}
+```
+
+
+
+---------------------------------------------------------
+
+## 注释格式
 ```python
 def functionName(user_id, user_passwd):
     '''
@@ -118,7 +136,7 @@ class ClassName():
 
 
 ## References & Bibliographies
-- 廖雪峰教程：
+- 廖雪峰教程：  
 	- [TPC编程](http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001432004374523e495f640612f4b08975398796939ec3c000)
 	- [UDP编程](http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001432004977916a212e2168e21449981ad65cd16e71201000)
 - RTFM:
