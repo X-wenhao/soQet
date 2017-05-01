@@ -28,7 +28,7 @@ Prototype of primitive chat-room, concerning socket programming.
 	- [ ] 离线消息
 	- [ ] **历史记录最大条数控制**
 - [ ] **前后台对接**
-    - 说到AJAX，我希望你们都能去看一下[上一个项目里面的搜索是如何以动态的方式展示的](https://github.com/smdsbz/NewsHorizon/blob/master/static/js/function.js#L20)，要不然我感觉可能做不完...
+    - 说到AJAX，我希望你们都能去看一下[上一个项目里面的搜索是如何以动态的方式展示的](https://github.com/smdsbz/NewsHorizon/blob/master/main.py#L109)，要不然我感觉可能做不完...
 
 ---
 
