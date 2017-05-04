@@ -96,8 +96,8 @@ soQet/
 ``` -->
 
 ## Task Apportion
-*to be filled*
-*请在此处填写任务分配，将用作开发记录*
+**to be filled**  
+**。。。。**
 
 
 ## API & Regulation
@@ -110,7 +110,7 @@ soQet/
 ### Regulations
 
 #### 聊天内容
-```json
+```javascript
 chat_msg = {
     "name": "smdsbz",
     "mime": "text",         // 标志content里面的数据类型，除了text还可以是pic（图片）等
