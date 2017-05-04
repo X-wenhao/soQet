@@ -5,7 +5,32 @@ Prototype of primitive chat-room, concerning socket programming.
 
 ## Tasks
 
+
+
+
 ### Login Module
+
+### 测试用账号密码
+
+|   Account     |   Password    |
+|---------------|---------------|
+|    user       |   123456      |
+
+ps 可以直接调用`signinUser()`方法注册一个
+```python
+PS $PROJECT_LOCATION/soQet > python3
+......
+>>> from globalvar import *
+>>> from utils.user_utils import signinUser
+>>> signinUser(id, passwd)
+True
+>>>
+```
+
+
+
+
+
 #### Back-End
 - [x] **用户登陆<br>**
 	- [x] *注册？？*
